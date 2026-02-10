@@ -3,7 +3,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: golang:1.22
+    container: golang:1.25.6
     steps:
       - uses: actions/checkout@v4
 
@@ -12,6 +12,7 @@ jobs:
 
       - name: Vet
         run: |
+<<<<<<< HEAD
           go vet ./...
 
   deploy:
@@ -45,3 +46,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+=======
+
+          go vet ./...
+>>>>>>> eed403b10fcac1aaa01069ce7304791b2129c290
