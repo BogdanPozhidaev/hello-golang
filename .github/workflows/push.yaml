@@ -12,7 +12,6 @@ jobs:
 
       - name: Vet
         run: |
-<<<<<<< HEAD
           go vet ./...
 
   deploy:
@@ -37,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: bpozhidaev/hello-golang
+          images: <Docker ID>/hello-golang
 
       - name: Build and push Docker Image
         uses: docker/build-push-action@v5
@@ -46,7 +45,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-=======
-
-          go vet ./...
->>>>>>> eed403b10fcac1aaa01069ce7304791b2129c290
